@@ -1,0 +1,19 @@
+#root {
+    -fx-background-image: url('../images/bg.png');
+}
+
+#score {
+    -fx-alignment: center;
+    -fx-font-family: Consolas, sans-serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-text-fill: wheat;
+}
+
+#status {
+    -fx-alignment: center;
+    -fx-font-family: Consolas, sans-serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+    -fx-text-fill: wheat;
+}

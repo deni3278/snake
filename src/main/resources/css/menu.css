@@ -1,0 +1,27 @@
+#root {
+    -fx-background-image: url('../images/menu.png');
+}
+
+.button {
+    -fx-background-color: saddlebrown;
+    -fx-background-insets: 0;
+
+    -fx-font-family: Consolas, sans-serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+    -fx-text-fill: wheat;
+}
+
+.button:hover {
+    -fx-background-color: tan;
+
+    -fx-text-fill: saddlebrown;
+}
+
+.label {
+    -fx-alignment: center;
+    -fx-font-family: Consolas, sans-serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 50px;
+    -fx-text-fill: wheat;
+}

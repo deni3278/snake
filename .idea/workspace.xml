@@ -4,27 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5089802d-b19f-4598-b85e-a1504678cff7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Snake.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Snake.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/snake/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/snake/controller/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/snake/controller/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/snake/game/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/game.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/menu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/game.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/food.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/snake.png" afterDir="false" />
+    <list default="true" id="5089802d-b19f-4598-b85e-a1504678cff7" name="Default Changelist" comment="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/GameSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/GameSpeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/LoopCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/LoopCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/State.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +19,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1pfLWtuKvts9S89qQmlKvFazkhr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -72,17 +62,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
@@ -99,9 +78,39 @@
       <updated>1615569235336</updated>
       <workItem from="1615569238391" duration="437000" />
     </task>
+    <task id="LOCAL-00001" summary="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime.">
+      <created>1615712965849</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615712965849</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime.">
+      <created>1615712982491</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615712982491</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime." />
   </component>
 </project>

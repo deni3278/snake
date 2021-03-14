@@ -32,7 +32,7 @@ public class App extends Application {
         stage.setScene(sceneMenu);
     }
 
-    public static void setGameScene() {
+    public static void setGameScene(boolean insane) {
         stage.setScene(sceneGame);
 
         if (sceneGame.getUserData() instanceof FXMLLoader) {
@@ -40,7 +40,7 @@ public class App extends Application {
 
             if (loader.getController() instanceof GameController) {
                 GameController controller = loader.getController();
-                controller.startGame();
+                controller.startGame(insane);
             }
         }
     }

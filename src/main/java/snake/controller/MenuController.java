@@ -17,11 +17,20 @@ public class MenuController {
 
     @FXML
     public void initialize() {
-
+        btnNormal.setUserData(false);
+        btnInsane.setUserData(true);
     }
 
     @FXML
     public void setGameScene(ActionEvent e) {
-        App.setGameScene();
+        if (e.getSource() instanceof Button) {
+            Button btn = (Button) e.getSource();
+
+            if (btn.getUserData() instanceof Boolean) {
+                boolean insane = (boolean) btn.getUserData();
+
+                App.setGameScene(insane);
+            }
+        }
     }
 }

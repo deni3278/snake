@@ -17,43 +17,39 @@ public class KeyHandler implements EventHandler<KeyEvent> {
 
     @Override
     public void handle(KeyEvent event) {
-        if (!snake.isMoving()) {
-            switch (event.getCode()) {
-                case W:
-                case KP_UP:
-                case UP:
-                    if (snake.getDirection() == Direction.LEFT || snake.getDirection() == Direction.RIGHT) {
-                        snake.setDirection(Direction.UP);
-                    }
+        switch (event.getCode()) {
+            case W:
+            case KP_UP:
+            case UP:
+                if (snake.getLastDirection() != Direction.DOWN) {
+                    snake.setCurrentDirection(Direction.UP);
+                }
 
-                    break;
-                case D:
-                case KP_RIGHT:
-                case RIGHT:
-                    if (snake.getDirection() == Direction.UP || snake.getDirection() == Direction.DOWN) {
-                        snake.setDirection(Direction.RIGHT);
-                    }
+                break;
+            case D:
+            case KP_RIGHT:
+            case RIGHT:
+                if (snake.getLastDirection() != Direction.LEFT) {
+                    snake.setCurrentDirection(Direction.RIGHT);
+                }
 
-                    break;
-                case S:
-                case KP_DOWN:
-                case DOWN:
-                    if (snake.getDirection() == Direction.LEFT || snake.getDirection() == Direction.RIGHT) {
-                        snake.setDirection(Direction.DOWN);
-                    }
+                break;
+            case S:
+            case KP_DOWN:
+            case DOWN:
+                if (snake.getLastDirection() != Direction.UP) {
+                    snake.setCurrentDirection(Direction.DOWN);
+                }
 
-                    break;
-                case A:
-                case KP_LEFT:
-                case LEFT:
-                    if (snake.getDirection() == Direction.UP || snake.getDirection() == Direction.DOWN) {
-                        snake.setDirection(Direction.LEFT);
-                    }
+                break;
+            case A:
+            case KP_LEFT:
+            case LEFT:
+                if (snake.getLastDirection() != Direction.RIGHT) {
+                    snake.setCurrentDirection(Direction.LEFT);
+                }
 
-                    break;
-            }
-
-            snake.setMoving(true);
+                break;
         }
     }
 }

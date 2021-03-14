@@ -2,6 +2,8 @@ package snake.game;
 
 import javafx.scene.canvas.GraphicsContext;
 
+import java.util.List;
+
 import static javafx.scene.effect.BlendMode.SRC_OVER;
 
 /**
@@ -18,11 +20,15 @@ public class Renderer {
         context.setGlobalBlendMode(SRC_OVER);
     }
 
-    public void draw(Snake snake) {
+    public void draw(Snake snake, List<Food> foodObjects) {
         context.clearRect(0, 0, Game.getWidth(), Game.getHeight());
 
         for (Entity segment : snake.getSegments()) {
             context.drawImage(segment.getImage(), segment.getX(), segment.getY());
+        }
+
+        for (Food food : foodObjects) {
+            context.drawImage(food.getImage(), food.getX(), food.getY());
         }
     }
 }

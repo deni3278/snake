@@ -61,7 +61,12 @@ public class Game implements GameSpeedHandler {
 
         loop.getKeyFrames().add(new KeyFrame(Duration.seconds(speed.value), e -> {
             state.update();
-            renderer.draw(state.getSnake());
+
+            if (!state.isGameOver()) {
+                renderer.draw(state.getSnake(), state.getFoodObjects());
+            } else {
+                loop.stop();
+            }
         }));
         loop.play();
     }

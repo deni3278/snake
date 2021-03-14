@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5089802d-b19f-4598-b85e-a1504678cff7" name="Default Changelist" comment="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/snake/game/Direction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/snake/game/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/snake/game/KeyHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/snake/game/Snake.java" afterDir="false" />
+    <list default="true" id="5089802d-b19f-4598-b85e-a1504678cff7" name="Default Changelist" comment="Implement player and player controls">
+      <change afterPath="$PROJECT_DIR$/src/main/java/snake/game/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/snake/game/ScoreHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/GameSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/GameSpeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/KeyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Snake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/State.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -114,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615738530018</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implement player and player controls">
+      <created>1615740613776</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615740613776</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +141,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add snake &amp; food class&#10;&#10;The snake is initialized to spawn as one cell in the center of the grid.&#10;&#10;The food is initialized to spawn such that it does not intersect the snake or other food objects.&#10;&#10;Both entities are rendered each frame to the canvas." />
     <MESSAGE value="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime." />
+    <MESSAGE value="Implement player and player controls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement player and player controls" />
   </component>
 </project>

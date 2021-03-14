@@ -14,10 +14,15 @@ public class Renderer {
 
     public Renderer(GraphicsContext context) {
         this.context = context;
+
         context.setGlobalBlendMode(SRC_OVER);
     }
 
-    public void draw() {
+    public void draw(Snake snake) {
         context.clearRect(0, 0, Game.getWidth(), Game.getHeight());
+
+        for (Entity segment : snake.getSegments()) {
+            context.drawImage(segment.getImage(), segment.getX(), segment.getY());
+        }
     }
 }

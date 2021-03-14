@@ -11,16 +11,21 @@ import javafx.beans.property.SimpleIntegerProperty;
 public class State {
     private final GameSpeedHandler callback;
     private final IntegerProperty scoreProperty = new SimpleIntegerProperty(0);
+    private final Snake snake = new Snake();
 
     public State(GameSpeedHandler callback) {
         this.callback = callback;
     }
 
     public void update() {
-
+        snake.move();
     }
 
     public IntegerProperty getScoreProperty() {
         return scoreProperty;
+    }
+
+    public Snake getSnake() {
+        return snake;
     }
 }

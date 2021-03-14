@@ -5,6 +5,7 @@ import javafx.animation.RotateTransition;
 import javafx.animation.Timeline;
 import javafx.beans.property.IntegerProperty;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.image.Image;
 import javafx.util.Duration;
 
 import static javafx.animation.Animation.INDEFINITE;
@@ -16,8 +17,12 @@ import static javafx.animation.Animation.Status.RUNNING;
  * @since 12.03.2021
  */
 public class Game implements GameSpeedHandler {
-    private static double width;
-    private static double height;
+    public static final double CELL = 40.0;                     // Width and height of a cell on the canvas
+
+    private static double width;                                // Width of the canvas
+    private static double height;                               // Height of the canvas
+    private static final String IMAGES_PATH = "../../images/";  // Relative path to the images resource directory
+
 
     private final State state;
     private final Renderer renderer;
@@ -29,6 +34,9 @@ public class Game implements GameSpeedHandler {
 
         state = new State(this);
         renderer = new Renderer(canvas.getGraphicsContext2D());
+
+        canvas.setFocusTraversable(true);   // Allows the KeyHandler to listen for input on the canvas
+        canvas.setOnKeyPressed(new KeyHandler(state.getSnake()));
 
         loop.setCycleCount(INDEFINITE);
 
@@ -53,9 +61,13 @@ public class Game implements GameSpeedHandler {
 
         loop.getKeyFrames().add(new KeyFrame(Duration.seconds(speed.value), e -> {
             state.update();
-            renderer.draw();
+            renderer.draw(state.getSnake());
         }));
         loop.play();
+    }
+
+    public static Image getImage(String name) {
+        return new Image(Game.class.getResource(IMAGES_PATH + name).toExternalForm());
     }
 
     public static double getWidth() {

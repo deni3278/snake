@@ -60,10 +60,10 @@ public class State implements ScoreHandler {
         final int SPEED = 5;    // Amount of seconds that the speed food lasts for
         final int BIG = 8;      // Amount of seconds that the big food lasts for
 
-        Food food = new Food(Game.getImage("food.png"), snake, foodObjects);
+        Food food = new Food(Game.getImage("snake.png"), snake, foodObjects);
         foodObjects.add(food);
 
-        Food speedFood = new Powerup(Game.getImage("powerup.png"), snake, foodObjects) {
+        Food speedFood = new Powerup(Game.getImage("pepper.png"), snake, foodObjects) {
             @Override
             public void eat() {
                 if (!isActive()) {
@@ -85,7 +85,7 @@ public class State implements ScoreHandler {
         };
         foodObjects.add(speedFood);
 
-        Food bigFood = new Powerup(Game.getImage("powerup.png"), snake, foodObjects) {
+        Food bigFood = new Powerup(Game.getImage("peanut.png"), snake, foodObjects) {
             @Override
             public void eat() {
                 if (!isActive()) {

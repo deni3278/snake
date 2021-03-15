@@ -24,6 +24,7 @@ public class App extends Application {
 
         stage.setTitle("Snake");
         stage.setResizable(false);
+        stage.setOnCloseRequest(e -> System.exit(0));
         setMenuScene();
         stage.show();
     }

@@ -6,6 +6,7 @@ import javafx.animation.Timeline;
 import javafx.beans.property.IntegerProperty;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 import static javafx.animation.Animation.INDEFINITE;
@@ -27,7 +28,7 @@ public class Game implements GameSpeedHandler {
     private final Renderer renderer;
     private final Timeline loop = new Timeline();
 
-    public Game(Canvas canvas, boolean insane) {
+    public Game(Canvas canvas, ImageView view, boolean insane) {
         width = canvas.getWidth();
         height = canvas.getWidth();
 
@@ -40,7 +41,7 @@ public class Game implements GameSpeedHandler {
         loop.setCycleCount(INDEFINITE);
 
         if (insane) {
-            setInsane(canvas);
+            setInsane(canvas, view);
         }
     }
 
@@ -86,7 +87,7 @@ public class Game implements GameSpeedHandler {
         return state.getScoreProperty();
     }
 
-    private void setInsane(Canvas canvas) {
+    private void setInsane(Canvas canvas, ImageView view) {
         final int ROTATE_SCORE = 5;
         final double ROTATE_DURATION = 0.5;
         final double ROTATE_ANGLE = 90.0;
@@ -98,6 +99,10 @@ public class Game implements GameSpeedHandler {
                 transition.setFromAngle(canvas.getRotate());
                 transition.setToAngle(canvas.getRotate() + ROTATE_ANGLE);
                 transition.play();
+
+                if (view.getImage() == null) {
+                    view.setImage(getImage("insane.gif"));
+                }
             }
         });
     }

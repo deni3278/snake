@@ -41,6 +41,8 @@ public class Snake {
     }
 
     public void move() {
+        updateSprites();
+
         px = segments.getLast().getX();
         py = segments.getLast().getX();
 
@@ -147,6 +149,16 @@ public class Snake {
     private void grow() {
         segments.addLast(new Entity(segments.getLast().getImage(), px, py));
         callback.increment();
+    }
+
+    private void updateSprites() {
+        segments.getFirst().setImage(Game.getImage("head.png"));
+
+        if (segments.size() > 1) {
+            for (int i = segments.size() - 1; i > 0; i--) {
+                segments.get(i).setImage(Game.getImage("snake.png"));
+            }
+        }
     }
 
     private double[] nextPosition() {

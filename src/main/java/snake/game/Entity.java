@@ -31,6 +31,10 @@ public class Entity {
         return image;
     }
 
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
     public double getX() {
         return x;
     }

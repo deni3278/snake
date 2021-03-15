@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5089802d-b19f-4598-b85e-a1504678cff7" name="Default Changelist" comment="Fix insane difficulty">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/insane.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/peanut.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/pepper.png" afterDir="false" />
+    <list default="true" id="5089802d-b19f-4598-b85e-a1504678cff7" name="Default Changelist" comment="Insaneify insane difficulty&#10;&#10;Added more effects and a soundtrack for the insane difficulty.&#10;&#10;There are also two new food sprites.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/food.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/head.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snake/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/snake/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Snake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/food.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/powerup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/snake.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/snake.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +100,7 @@
       <workItem from="1615793656877" duration="3761000" />
       <workItem from="1615797931368" duration="504000" />
       <workItem from="1615800342949" duration="2334000" />
-      <workItem from="1615809056929" duration="2836000" />
+      <workItem from="1615809056929" duration="6200000" />
     </task>
     <task id="LOCAL-00001" summary="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime.">
       <created>1615712965849</created>
@@ -181,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615802674404</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Insaneify insane difficulty&#10;&#10;Added more effects and a soundtrack for the insane difficulty.&#10;&#10;There are also two new food sprites.">
+      <created>1615812470095</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615812470095</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +214,7 @@
     <MESSAGE value="Undo bugfix that introduced hanging" />
     <MESSAGE value="Fix food spawning&#10;&#10;Food didn't properly check if it spawned inside another game object." />
     <MESSAGE value="Fix insane difficulty" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix insane difficulty" />
+    <MESSAGE value="Insaneify insane difficulty&#10;&#10;Added more effects and a soundtrack for the insane difficulty.&#10;&#10;There are also two new food sprites." />
+    <option name="LAST_COMMIT_MESSAGE" value="Insaneify insane difficulty&#10;&#10;Added more effects and a soundtrack for the insane difficulty.&#10;&#10;There are also two new food sprites." />
   </component>
 </project>

@@ -38,21 +38,26 @@ public class GameController {
         Game game = new Game(canvas, viewBackground, insane);
         game.startLoop();
 
+        final double VOLUME = 0.1;
+
+        AudioClip clip;
+
         if (insane) {
             setInsane();
+
+            clip = new AudioClip(getClass().getResource("../../audio/insane.mp3").toExternalForm());
+        } else {
+            clip = new AudioClip(getClass().getResource("../../audio/normal.mp3").toExternalForm());
         }
+
+        clip.setCycleCount(INDEFINITE);
+        clip.setVolume(VOLUME);
+        clip.play();
 
         labelScore.textProperty().bind(Bindings.format("Score: %-10d", game.getScoreProperty()));
     }
 
     private void setInsane() {
-        final double VOLUME = 0.1;
-
-        AudioClip clip = new AudioClip(getClass().getResource("../../audio/insane.mp3").toExternalForm());
-        clip.setCycleCount(INDEFINITE);
-        clip.setVolume(VOLUME);
-        clip.play();
-
         ColorInput color = new ColorInput();
         color.setPaint(Color.WHITE);
         color.setWidth(Double.MAX_VALUE);

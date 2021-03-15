@@ -56,10 +56,54 @@ public class State implements ScoreHandler {
     }
 
     private void initFoodObjects(GameSpeedHandler callback) {
-        final int MOVE = 10;  // Amount of seconds before the food moves on the canvas
+        final int MOVE = 10;    // Amount of seconds before the food moves on the canvas
+        final int SPEED = 5;    // Amount of seconds that the speed food lasts for
+        final int BIG = 8;      // Amount of seconds that the big food lasts for
 
         Food food = new Food(Game.getImage("food.png"), snake, foodObjects);
         foodObjects.add(food);
+
+        Food speedFood = new Powerup(Game.getImage("powerup.png"), snake, foodObjects) {
+            @Override
+            public void eat() {
+                if (!isActive()) {
+                    callback.startLoop(GameSpeed.FAST);
+
+                    setActive(true);
+
+                    Timer timer = new Timer();
+                    timer.schedule(new TimerTask() {
+                        @Override
+                        public void run() {
+                            callback.startLoop(GameSpeed.NORMAL);
+
+                            setActive(false);
+                        }
+                    }, Duration.ofSeconds(SPEED).toMillis());
+                }
+            }
+        };
+        foodObjects.add(speedFood);
+
+        Food bigFood = new Powerup(Game.getImage("powerup.png"), snake, foodObjects) {
+            @Override
+            public void eat() {
+                if (!isActive()) {
+                    snake.setBig(true);
+                    setActive(true);
+
+                    Timer timer = new Timer();
+                    timer.schedule(new TimerTask() {
+                        @Override
+                        public void run() {
+                            snake.setBig(false);
+                            setActive(false);
+                        }
+                    }, Duration.ofSeconds(BIG).toMillis());
+                }
+            }
+        };
+        foodObjects.add(bigFood);
 
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {

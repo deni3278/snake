@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5089802d-b19f-4598-b85e-a1504678cff7" name="Default Changelist" comment="Implement player and player controls">
-      <change afterPath="$PROJECT_DIR$/src/main/java/snake/game/Food.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/snake/game/ScoreHandler.java" afterDir="false" />
+    <list default="true" id="5089802d-b19f-4598-b85e-a1504678cff7" name="Default Changelist" comment="Implement powerup food">
+      <change afterPath="$PROJECT_DIR$/src/main/java/snake/game/Powerup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/big.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/powerup.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/KeyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Renderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Snake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/State.java" afterDir="false" />
@@ -23,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,13 +64,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -91,6 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615569235336</updated>
       <workItem from="1615569238391" duration="437000" />
+      <workItem from="1615793656877" duration="3592000" />
     </task>
     <task id="LOCAL-00001" summary="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime.">
       <created>1615712965849</created>
@@ -120,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615740613776</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implement food &amp; collision">
+      <created>1615745839544</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615745839544</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +151,8 @@
     <MESSAGE value="Add snake &amp; food class&#10;&#10;The snake is initialized to spawn as one cell in the center of the grid.&#10;&#10;The food is initialized to spawn such that it does not intersect the snake or other food objects.&#10;&#10;Both entities are rendered each frame to the canvas." />
     <MESSAGE value="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime." />
     <MESSAGE value="Implement player and player controls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement player and player controls" />
+    <MESSAGE value="Implement food &amp; collision" />
+    <MESSAGE value="Implement powerup food" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement powerup food" />
   </component>
 </project>

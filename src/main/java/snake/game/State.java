@@ -10,22 +10,32 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * @author Denis Cokanovic
+ * Models a game's state.
+ *
+ * @author Denis, Morten, Niclas, Rasmus & Vanda
  * @version 0.0.1
  * @since 14.03.2021
  */
 public class State implements ScoreHandler {
-    private final IntegerProperty scoreProperty = new SimpleIntegerProperty(0);
+    private final IntegerProperty scoreProperty = new SimpleIntegerProperty(0); // The score property, which the score label is bound to
     private final Snake snake;
     private final List<Food> foodObjects = new ArrayList<>();
 
-    private boolean isGameOver;
+    private boolean isGameOver; // If true, the next frame will not be rendered and the loop will be stopped
 
+    /**
+     * Creates a new State with an implementation of the callback interface.
+     *
+     * @param gameSpeedHandler the implementation of the callback interface that acts a delegate method.
+     */
     public State(GameSpeedHandler gameSpeedHandler) {
         snake = new Snake(this);
         initFoodObjects(gameSpeedHandler);
     }
 
+    /**
+     * Called every frame to update the snake's movement and check for collisions.
+     */
     public void update() {
         isGameOver = snake.checkCollisions(foodObjects);
 
@@ -34,6 +44,9 @@ public class State implements ScoreHandler {
         }
     }
 
+    /**
+     * Increments the score.
+     */
     @Override
     public void increment() {
         scoreProperty.set(scoreProperty.get() + 1);
@@ -55,6 +68,11 @@ public class State implements ScoreHandler {
         return isGameOver;
     }
 
+    /**
+     * Initializes the three food objects and provides implementations to the powerups.
+     *
+     * @param callback the callback implementation that allows the caller to change the game speed.
+     */
     private void initFoodObjects(GameSpeedHandler callback) {
         final int MOVE = 10;    // Amount of seconds before the food moves on the canvas
         final int SPEED = 5;    // Amount of seconds that the speed food lasts for

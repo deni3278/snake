@@ -8,20 +8,19 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author Denis Cokanovic
+ * @author Denis, Morten, Niclas, Rasmus & Vanda
  * @version 0.0.1
  * @since 14.03.2021
  */
 public class Snake {
     private final ScoreHandler callback;
     private final LinkedList<Entity> segments = new LinkedList<>();
+    private final BooleanProperty isBigProperty = new SimpleBooleanProperty(false);
 
+    private Entity bigHead;
     private Direction currentDirection = Direction.UP;                      // Direction the snake will move in (initialized to start by moving up)
     private Direction lastDirection = currentDirection;                     // Disables the KeyHandler
     private double px, py;                                                  // Coordinates of the tail's last position
-
-    private BooleanProperty isBigProperty = new SimpleBooleanProperty(false);
-    private Entity bigHead;
 
     public Snake(ScoreHandler callback) {
         this.callback = callback;

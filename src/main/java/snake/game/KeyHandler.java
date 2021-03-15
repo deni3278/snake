@@ -4,13 +4,20 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 
 /**
- * @author Denis Cokanovic
+ * Handles the player's keyboard input.
+ *
+ * @author Denis, Morten, Niclas, Rasmus & Vanda
  * @version 0.0.1
  * @since 14.03.2021
  */
 public class KeyHandler implements EventHandler<KeyEvent> {
     private final Snake snake;
 
+    /**
+     * Initializes a new KeyHandler that alters the specified Snake object.
+     *
+     * @param snake the Snake object to change direction of.
+     */
     public KeyHandler(Snake snake) {
         this.snake = snake;
     }

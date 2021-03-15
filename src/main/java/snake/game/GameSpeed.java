@@ -1,7 +1,11 @@
 package snake.game;
 
 /**
- * @author Denis Cokanovic
+ * Possible game speeds and respective values.
+ *
+ * <p>The values are in terms of how long a single frame should last for.
+ *
+ * @author Denis, Morten, Niclas, Rasmus & Vanda
  * @version 0.0.1
  * @since 14.03.2021
  */

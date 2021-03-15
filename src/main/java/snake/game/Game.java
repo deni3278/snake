@@ -13,7 +13,9 @@ import static javafx.animation.Animation.INDEFINITE;
 import static javafx.animation.Animation.Status.RUNNING;
 
 /**
- * @author Denis Cokanovic
+ * Models a single Snake game.
+ *
+ * @author Denis, Morten, Niclas, Rasmus & Vanda
  * @version 0.0.1
  * @since 12.03.2021
  */
@@ -28,6 +30,13 @@ public class Game implements GameSpeedHandler {
     private final Renderer renderer;
     private final Timeline loop = new Timeline();
 
+    /**
+     * Initializes a new Game instance with a specified canvas to draw onto and a specified difficulty.
+     *
+     * @param canvas the canvas that is being drawn onto.
+     * @param view the image view that is layered behind the canvas for insane difficulty.
+     * @param insane whether the game should be set to insane difficulty.
+     */
     public Game(Canvas canvas, ImageView view, boolean insane) {
         width = canvas.getWidth();
         height = canvas.getWidth();
@@ -45,10 +54,18 @@ public class Game implements GameSpeedHandler {
         }
     }
 
+    /**
+     * Starts the game loop with normal speed.
+     */
     public void startLoop() {
         startLoop(GameSpeed.NORMAL);
     }
 
+    /**
+     * Starts the game loop with a specified speed.
+     *
+     * @param speed the speed the game loop should run at.
+     */
     @Override
     public void startLoop(GameSpeed speed) {
         if (loop.getStatus().equals(RUNNING)) {
@@ -71,26 +88,47 @@ public class Game implements GameSpeedHandler {
         loop.play();
     }
 
+    /**
+     * Returns an image from the resources folder with the specified name and extension.
+     *
+     * @param name the name (including extension) of the image.
+     * @return an {@code Image} object with the specified image.
+     */
     public static Image getImage(String name) {
         return new Image(Game.class.getResource(IMAGES_PATH + name).toExternalForm());
     }
 
+    /**
+     * Returns the width of the canvas that is being drawn onto.
+     *
+     * @return the width of the canvas as a double.
+     */
     public static double getWidth() {
         return width;
     }
 
+    /**
+     * Returns the height of the canvas that is being drawn onto.
+     *
+     * @return the height of the canvas as a double.
+     */
     public static double getHeight() {
         return height;
     }
 
+    /**
+     * Returns the score property, which is incremented every time the player snake eats a food object.
+     *
+     * @return the score property.
+     */
     public IntegerProperty getScoreProperty() {
         return state.getScoreProperty();
     }
 
     private void setInsane(Canvas canvas, ImageView view) {
-        final int ROTATE_SCORE = 5;
-        final double ROTATE_DURATION = 0.5;
-        final double ROTATE_ANGLE = 90.0;
+        final int ROTATE_SCORE = 5;             // The amount of points the player needs before the canvas starts rotating
+        final double ROTATE_DURATION = 0.5;     // The duration in seconds that the rotation transition takes
+        final double ROTATE_ANGLE = 90.0;       // The rotation angle of the canvas' rotation
 
         getScoreProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal.intValue() % ROTATE_SCORE == 0) {

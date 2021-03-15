@@ -1,7 +1,9 @@
 package snake.game;
 
 /**
- * @author Denis Cokanovic
+ * A faux callback method interface, which allows a has-a relationship to call methods upstream.
+ *
+ * @author Denis, Morten, Niclas, Rasmus & Vanda
  * @version 0.0.1
  * @since 14.03.2021
  */

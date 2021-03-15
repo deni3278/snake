@@ -1,5 +1,9 @@
 package snake.game;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.scene.image.Image;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,8 +18,10 @@ public class Snake {
 
     private Direction currentDirection = Direction.UP;                      // Direction the snake will move in (initialized to start by moving up)
     private Direction lastDirection = currentDirection;                     // Disables the KeyHandler
+    private double px, py;                                                  // Coordinates of the tail's last position
 
-    private double px, py;
+    private BooleanProperty isBigProperty = new SimpleBooleanProperty(false);
+    private Entity bigHead;
 
     public Snake(ScoreHandler callback) {
         this.callback = callback;
@@ -26,6 +32,12 @@ public class Snake {
         py = y;
 
         segments.add(new Entity(Game.getImage("snake.png"), x, y));   // Initialize the head to start in the centermost cell of the canvas
+
+        isBigProperty.addListener((obs, oldVal, newVal) -> {
+            if (!newVal) {
+                bigHead = null;
+            }
+        });
     }
 
     public void move() {
@@ -48,6 +60,19 @@ public class Snake {
         head.setX(nextPosition[0]);
         head.setY(nextPosition[1]);
 
+        if (isBigProperty.get()) {
+            Image image = Game.getImage("big.png");
+            double x = head.getX() - Game.CELL;
+            double y = head.getY() - Game.CELL;
+
+            if (bigHead == null) {
+                bigHead = new Entity(image, x, y);
+            } else {
+                bigHead.setX(x);
+                bigHead.setY(y);
+            }
+        }
+
         lastDirection = currentDirection;
     }
 
@@ -65,12 +90,30 @@ public class Snake {
         }
 
         for (Food food : foodObjects) {
-            if (food.intersects(nextPosition[0], nextPosition[1], Game.CELL, Game.CELL)) {
-                grow();
+            if (isBig()) {
+                if (food.intersects(bigHead)) {
+                    grow();
 
-                food.move();
+                    if (food instanceof Powerup) {
+                        ((Powerup) food).eat();
+                    }
 
-                break;
+                    food.move();
+
+                    break;
+                }
+            } else {
+                if (food.intersects(nextPosition[0], nextPosition[1], Game.CELL, Game.CELL)) {
+                    grow();
+
+                    if (food instanceof Powerup) {
+                        ((Powerup) food).eat();
+                    }
+
+                    food.move();
+
+                    break;
+                }
             }
         }
 
@@ -87,6 +130,18 @@ public class Snake {
 
     public Direction getLastDirection() {
         return lastDirection;
+    }
+
+    public boolean isBig() {
+        return isBigProperty.get();
+    }
+
+    public void setBig(boolean big) {
+        isBigProperty.setValue(big);
+    }
+
+    public Entity getBigHead() {
+        return bigHead;
     }
 
     private void grow() {

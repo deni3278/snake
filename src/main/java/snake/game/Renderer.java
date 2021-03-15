@@ -24,7 +24,17 @@ public class Renderer {
         context.clearRect(0, 0, Game.getWidth(), Game.getHeight());
 
         for (Entity segment : snake.getSegments()) {
-            context.drawImage(segment.getImage(), segment.getX(), segment.getY());
+            if (!segment.equals(snake.getSegments().getFirst())) {
+                context.drawImage(segment.getImage(), segment.getX(), segment.getY());
+            } else {
+                if (snake.isBig()) {
+                    Entity bigHead = snake.getBigHead();
+
+                    context.drawImage(bigHead.getImage(), bigHead.getX(), bigHead.getY());
+                } else {
+                    context.drawImage(segment.getImage(), segment.getX(), segment.getY());
+                }
+            }
         }
 
         for (Food food : foodObjects) {

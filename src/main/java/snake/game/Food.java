@@ -34,6 +34,10 @@ public class Food extends Entity {
             x = random.nextInt((int) Math.floor(Game.getWidth() / Game.CELL)) * Game.CELL;
             y = random.nextInt((int) Math.floor(Game.getHeight() / Game.CELL)) * Game.CELL;
 
+            if (snake.isBig() && intersects(snake.getBigHead())) {
+                isEmpty = false;
+            }
+
             for (Entity segment : snake.getSegments()) {
                 if (intersects(segment)) {
                     isEmpty = false;

@@ -23,7 +23,6 @@ public class Game implements GameSpeedHandler {
     private static double height;                               // Height of the canvas
     private static final String IMAGES_PATH = "../../images/";  // Relative path to the images resource directory
 
-
     private final State state;
     private final Renderer renderer;
     private final Timeline loop = new Timeline();
@@ -95,6 +94,7 @@ public class Game implements GameSpeedHandler {
         getScoreProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal.intValue() % ROTATE_SCORE == 0) {
                 RotateTransition transition = new RotateTransition(Duration.seconds(ROTATE_DURATION));
+                transition.setNode(canvas);
                 transition.setFromAngle(canvas.getRotate());
                 transition.setToAngle(canvas.getRotate() + ROTATE_ANGLE);
                 transition.play();

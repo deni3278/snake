@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5089802d-b19f-4598-b85e-a1504678cff7" name="Default Changelist" comment="Undo bugfix that introduced hanging">
+    <list default="true" id="5089802d-b19f-4598-b85e-a1504678cff7" name="Default Changelist" comment="Fix insane difficulty">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,8 @@
       <updated>1615569235336</updated>
       <workItem from="1615569238391" duration="437000" />
       <workItem from="1615793656877" duration="3761000" />
-      <workItem from="1615797931368" duration="411000" />
+      <workItem from="1615797931368" duration="504000" />
+      <workItem from="1615800342949" duration="2077000" />
     </task>
     <task id="LOCAL-00001" summary="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime.">
       <created>1615712965849</created>
@@ -133,7 +135,21 @@
       <option name="project" value="LOCAL" />
       <updated>1615798099922</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fix food spawning&#10;&#10;Food didn't properly check if it spawned inside another game object.">
+      <created>1615798388720</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615798388720</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix insane difficulty">
+      <created>1615800768157</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1615800768157</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +175,8 @@
     <MESSAGE value="Implement powerup food" />
     <MESSAGE value="Fix bug where food spawns in big head" />
     <MESSAGE value="Undo bugfix that introduced hanging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Undo bugfix that introduced hanging" />
+    <MESSAGE value="Fix food spawning&#10;&#10;Food didn't properly check if it spawned inside another game object." />
+    <MESSAGE value="Fix insane difficulty" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix insane difficulty" />
   </component>
 </project>

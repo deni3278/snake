@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5089802d-b19f-4598-b85e-a1504678cff7" name="Default Changelist" comment="Add Javadocs">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/big.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/big.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snake/game/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snake/game/Snake.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +65,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
@@ -85,7 +98,9 @@
       <workItem from="1615800342949" duration="2334000" />
       <workItem from="1615809056929" duration="7359000" />
       <workItem from="1615828008458" duration="3121000" />
-      <workItem from="1615835033274" duration="19000" />
+      <workItem from="1615835033274" duration="69000" />
+      <workItem from="1615836152722" duration="15000" />
+      <workItem from="1615894260039" duration="1190000" />
     </task>
     <task id="LOCAL-00001" summary="Implement insane difficulty&#10;&#10;The score label is bound to the score property of the State class.&#10;If the player is playing on insane difficulty, the canvas will rotate every 5 points.&#10;&#10;Class State receives a callback upon instantiation by the Game class.&#10;The callback will be used to alter the game's speed at runtime.">
       <created>1615712965849</created>
@@ -192,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615834884711</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Update big head image">
+      <created>1615835092355</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1615835092355</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +245,7 @@
     <MESSAGE value="Insaneify insane difficulty&#10;&#10;Added more effects and a soundtrack for the insane difficulty.&#10;&#10;There are also two new food sprites." />
     <MESSAGE value="Add new sprites and audio tracks" />
     <MESSAGE value="Add Javadocs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Javadocs" />
+    <MESSAGE value="Update big head image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update big head image" />
   </component>
 </project>

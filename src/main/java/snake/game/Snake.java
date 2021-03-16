@@ -8,6 +8,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Models a player Snake.
+ *
  * @author Denis, Morten, Niclas, Rasmus & Vanda
  * @version 0.0.1
  * @since 14.03.2021
@@ -22,6 +24,11 @@ public class Snake {
     private Direction lastDirection = currentDirection;                     // Disables the KeyHandler
     private double px, py;                                                  // Coordinates of the tail's last position
 
+    /**
+     * Initializes a Snake object with the specified score callback method.
+     *
+     * @param callback the score callback method.
+     */
     public Snake(ScoreHandler callback) {
         this.callback = callback;
 
@@ -39,6 +46,11 @@ public class Snake {
         });
     }
 
+    /**
+     * Moves the snake and updates the sprites for each segment.
+     *
+     * <p>If the head is big, the position of the head is calculated.
+     */
     public void move() {
         updateSprites();
 
@@ -77,6 +89,12 @@ public class Snake {
         lastDirection = currentDirection;
     }
 
+    /**
+     * Checks for collisions against itself, other food objects, and the border.
+     *
+     * @param foodObjects the other food objects.
+     * @return true if game over.
+     */
     public boolean checkCollisions(List<Food> foodObjects) {
         double[] nextPosition = nextPosition();
 
@@ -145,11 +163,17 @@ public class Snake {
         return bigHead;
     }
 
+    /**
+     * Adds a new segment to the previous tail position and increments the score property.
+     */
     private void grow() {
         segments.addLast(new Entity(segments.getLast().getImage(), px, py));
         callback.increment();
     }
 
+    /**
+     * Updates each of the snake's segment's sprites.
+     */
     private void updateSprites() {
         segments.getFirst().setImage(Game.getImage("head.png"));
 
@@ -160,6 +184,11 @@ public class Snake {
         }
     }
 
+    /**
+     * Calculates the next position of the ahead based on the snake's current direction.
+     *
+     * @return an array containing and x and y coordinate respectively.
+     */
     private double[] nextPosition() {
         Entity head = segments.getFirst();
         double nx = -Game.CELL;
